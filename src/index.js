@@ -43,15 +43,28 @@ function Card(props) {
 }
 
 function App() {
+  const cards = [
+    {
+      image:
+        "https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fbird_strong_small.svg?v=1560032432704",
+      color: "#55CCFF"
+    },
+    {
+      image:
+        "https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fbird_fat_black_medium.svg?v=1557968629951",
+      color: "#FF88AA"
+    },
+    {
+      image:
+        "https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fdesigner.svg?v=1560273527081",
+      color: "#66BB66"
+    }
+  ]
   return (
     <div className="App">
-      <Card
-        image="https://cdn.glitch.com/071e5391-90f7-476b-b96c-1f51f7106b0c%2Fbird_fat_black_medium.svg?v=1557968629951"
-        color="#FF88AA"
-      />
-      <Card />
-      <Card />
-      <Card />
+      {cards.map(card => (
+        <Card image={card.image} color={card.color} key={card.image} />
+      ))}
     </div>
   )
 }
